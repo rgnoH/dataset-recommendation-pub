@@ -2,6 +2,20 @@
 
 ## Data
 
+### Final data
+
+The processed data are stored in files questions.csv, pmid2summary.pt, and pmid2abstract.csv
+
+The file questions.csv is seperated by \t, and has the following columns:
+
+pmid: the dataset's pmid and the citation's pmid separater with "_"
+context: the sentence in the citation paper that we used to generate the research question
+research_question: the generated research question based on the citation paper
+random_question: the generated research question based on a random in-paragraph sentence in the citation paper.
+
+The pmid2summary.pt and pmid2abstract.pt files can be loaded with torch.load(), and are the dicts which store the mapping from pmid to the corresponding summary/abstract of that dataset paper.
+
+
 **Notice**: Because APIs don't have permission to all papers and different APIs can access different papers, **intersection operation** is probably needed when putting information from different raw data files together.
 
 ### Raw Data(data/raw)
